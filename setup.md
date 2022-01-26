@@ -11,3 +11,7 @@ sudo docker exec -it pg-docker /bin/bash
 
 psql -h localhost -U postgres -d postgres
 ```
+
+Rails:
+
+bin/rails g scaffold Product title:string description:text image_url:string price:decimal

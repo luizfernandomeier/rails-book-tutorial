@@ -14,6 +14,14 @@ psql -h localhost -U postgres -d postgres
 
 Rails:
 
+```sh
 bin/rails g scaffold Product title:string description:text image_url:string price:decimal
 
 bin/rails db:migrate
+```
+
+Test:
+
+```sh
+bin/rails test
+```

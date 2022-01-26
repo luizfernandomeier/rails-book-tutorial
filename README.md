@@ -1,24 +1,34 @@
-# README
+Database:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```sh
+docker pull postgres
 
-Things you may want to cover:
+mkdir -p /home/luiz/docker/volumes/postgres2
 
-* Ruby version
+docker run --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v /home/luiz/docker/volumes/postgres:/var/lib/postgresql/data postgres
 
-* System dependencies
+sudo docker exec -it pg-docker /bin/bash
 
-* Configuration
+psql -h localhost -U postgres -d postgres
+```
 
-* Database creation
+Rails:
 
-* Database initialization
+```sh
+bin/rails g scaffold Product title:string description:text image_url:string price:decimal
 
-* How to run the test suite
+# creates the database
+bin/rails db:setup
 
-* Services (job queues, cache servers, search engines, etc.)
+bin/rails db:migrate
 
-* Deployment instructions
+bin/rails db:rollback
 
-* ...
+bin/rails db:seed
+```
+
+Test:
+
+```sh
+bin/rails test
+```

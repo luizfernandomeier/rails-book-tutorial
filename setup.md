@@ -18,6 +18,8 @@ Rails:
 bin/rails g scaffold Product title:string description:text image_url:string price:decimal
 
 bin/rails db:migrate
+
+bin/rails db:seed
 ```
 
 Test:

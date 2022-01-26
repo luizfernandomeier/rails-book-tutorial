@@ -17,7 +17,12 @@ Rails:
 ```sh
 bin/rails g scaffold Product title:string description:text image_url:string price:decimal
 
+# creates the database
+bin/rails db:setup
+
 bin/rails db:migrate
+
+bin/rails db:rollback
 
 bin/rails db:seed
 ```

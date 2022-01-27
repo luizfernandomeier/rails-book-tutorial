@@ -10,6 +10,7 @@ class Product < ApplicationRecord
 
   private
     def image_has_to_exist
+      return if image_url.blank?
       errors.add(:image_url, "image doesn't exist: #{image_url}") unless asset_exists?(image_url)
     end
 

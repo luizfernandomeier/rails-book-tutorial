@@ -31,4 +31,6 @@ Test:
 
 ```sh
 bin/rails test
+
+bin/rails test:models
 ```

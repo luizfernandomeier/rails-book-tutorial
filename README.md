@@ -17,6 +17,8 @@ Rails:
 ```sh
 bin/rails g scaffold Product title:string description:text image_url:string price:decimal
 
+bin/rails g controller Store index
+
 # creates the database
 bin/rails db:setup
 

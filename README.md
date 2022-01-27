@@ -25,6 +25,9 @@ bin/rails db:migrate
 bin/rails db:rollback
 
 bin/rails db:seed
+
+# can be used to run the fixtures manually
+bin/rails db:test:prepare
 ```
 
 Test:

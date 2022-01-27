@@ -58,6 +58,6 @@ class ProductTest < ActiveSupport::TestCase
     product = new_product
     product.title = products(:ruby).title
     assert product.invalid?
-    assert_equal ['has already been taken'], product.errors[:title]
+    assert_equal [I18n.translate('errors.messages.taken')], product.errors[:title]
   end
 end

@@ -19,6 +19,9 @@ bin/rails g scaffold Product title:string description:text image_url:string pric
 
 bin/rails g controller Store index
 
+# toggle caching on and off in the dev env
+bin/rails dev:cache
+
 # creates the database
 bin/rails db:setup
 

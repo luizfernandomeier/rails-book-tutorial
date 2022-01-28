@@ -23,6 +23,7 @@
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
+        <div class="time"><%= DateTime.current.strftime("%F %T") %></div>
       </nav>
       <main class='<%= controller.controller_name %>'>
         <%= yield %>

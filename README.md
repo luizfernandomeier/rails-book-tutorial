@@ -21,6 +21,8 @@ bin/rails g controller Store index
 
 bin/rails g scaffold Cart
 
+bin/rails g scaffold LineItem product:references cart:belongs_to
+
 # toggle caching on and off in the dev env
 bin/rails dev:cache
 

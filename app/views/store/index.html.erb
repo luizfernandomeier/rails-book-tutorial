@@ -5,7 +5,8 @@
 <h1>Your Pragmatic Catalog</h1>
 
 <ul class="catalog">
-  <% cache @products do # Russian doll caching %>
+  <!-- russian doll caching -->
+  <% cache @products do %>
     <% @products.each { |product| %>
       <% cache product do %>
         <li>
@@ -17,6 +18,9 @@
           <div class="price">
             <%= number_to_currency(product.price) %>
           </div>
+          <!-- button_to uses POST as default -->
+          <!-- rails also know how to extract the product id -->
+          <%= button_to('Add to Cart', line_items_path(product_id: product)) %>
         </li>
       <% end %>
     <% } %>

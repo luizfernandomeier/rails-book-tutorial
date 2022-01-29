@@ -29,6 +29,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test 'should show product' do
     get product_url(@product)
     assert_response :success
+    assert_select 'div.title', @product.title
+    # assert_select 'p div.title', @product.title # TODO: why does this fail?
+    # assert_select 'p', @product.description
+    # assert_select 'p', @product.image_url
+    # assert_select 'p', @product.price
   end
 
   test 'should get edit' do

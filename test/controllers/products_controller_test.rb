@@ -50,6 +50,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy product' do
     assert_difference('Product.count', -1) do
+      @product.line_items.each { |line_item| line_item.destroy }
       delete product_url(@product)
     end
 

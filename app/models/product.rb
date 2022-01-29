@@ -10,6 +10,9 @@ class Product < ApplicationRecord
   }
   validate :image_has_to_exist
 
+  has_many :line_items
+  before_destroy :ensure_not_referenced_by_any_line_item # hook method
+
   private
 
   def image_has_to_exist
@@ -33,6 +36,13 @@ class Product < ApplicationRecord
       end
     else
       !Rails.application.assets.find_asset(path).nil?
+    end
+  end
+
+  def ensure_not_referenced_by_any_line_item
+    unless line_items.empty?
+      errors.add(:base, 'Line Items present')
+      throw :abort
     end
   end
 end

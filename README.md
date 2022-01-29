@@ -19,6 +19,8 @@ bin/rails g scaffold Product title:string description:text image_url:string pric
 
 bin/rails g controller Store index
 
+bin/rails g scaffold Cart
+
 # toggle caching on and off in the dev env
 bin/rails dev:cache
 

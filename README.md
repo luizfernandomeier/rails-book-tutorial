@@ -36,6 +36,8 @@ bin/rails db:setup
 
 bin/rails db:migrate
 
+bin/rails db:migrate:status
+
 bin/rails db:rollback
 
 bin/rails db:seed

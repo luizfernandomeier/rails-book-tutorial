@@ -52,4 +52,24 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to line_items_url
   end
+
+  test 'should create 1 line item with quantity of 2' do
+    assert_difference('LineItem.count', 1) do
+      post line_items_url, params: { product_id: products(:ruby).id }
+      post line_items_url, params: { product_id: products(:ruby).id }
+    end
+    LineItem.last(1).each do |line_item|
+      assert_equal 2, line_item.quantity
+    end
+  end
+
+  test 'should create 2 line items with quantity of 1' do
+    assert_difference('LineItem.count', 2) do
+      post line_items_url, params: { product_id: products(:ruby).id }
+      post line_items_url, params: { product_id: products(:green_book).id }
+    end
+    LineItem.last(2).each do |line_item|
+      assert_equal 1, line_item.quantity
+    end
+  end
 end

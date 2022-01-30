@@ -30,7 +30,7 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         # TODO: why in some cases we need to use `line_item_url`, and in others don't?
-        format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
+        format.html { redirect_to @line_item.cart }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new, status: :unprocessable_entity }

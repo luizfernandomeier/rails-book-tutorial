@@ -53,3 +53,10 @@ bin/rails test
 
 bin/rails test:models
 ```
+
+Debug:
+
+```sh
+# keep up with the log showing on a terminal
+tail -f log/development.log
+```

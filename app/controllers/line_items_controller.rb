@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
+  include IndexCounter
   before_action :set_cart, only: [:create]
   before_action :set_line_item, only: %i[show edit update destroy]
 
@@ -21,6 +22,8 @@ class LineItemsController < ApplicationController
 
   # POST /line_items or /line_items.json
   def create
+    reset_index_counter
+
     product = Product.find(params[:product_id])
     # TODO: this is kind of confusing:
     @line_item = @cart.line_items.build(product: product)

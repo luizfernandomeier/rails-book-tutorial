@@ -5,6 +5,9 @@
 <h1>Your Pragmatic Catalog</h1>
 
 <ul class="catalog">
+  <div class="index_counter">
+    <%= index_counter_message if must_show_index_counter? %>
+  </div>
   <!-- russian doll caching -->
   <% cache @products do %>
     <% @products.each { |product| %>

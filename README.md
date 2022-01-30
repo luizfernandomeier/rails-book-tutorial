@@ -28,6 +28,8 @@ bin/rails g migration add_quantity_to_line_items quantity:integer
 
 bin/rails g migration combine_items_in_cart
 
+bin/rails g migration add_price_to_line_items price:decimal
+
 # toggle caching on and off in the dev env
 bin/rails dev:cache
 

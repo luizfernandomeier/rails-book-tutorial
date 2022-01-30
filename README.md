@@ -26,6 +26,8 @@ bin/rails g scaffold LineItem product:references cart:belongs_to
 # the two patterns that rails matches on are AddXXXToYYY and RemoveXXXFromYYY, where XXX is ignored
 bin/rails g migration add_quantity_to_line_items quantity:integer
 
+bin/rails g migration combine_items_in_cart
+
 # toggle caching on and off in the dev env
 bin/rails dev:cache
 

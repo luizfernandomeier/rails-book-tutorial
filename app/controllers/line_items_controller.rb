@@ -25,8 +25,7 @@ class LineItemsController < ApplicationController
     reset_index_counter
 
     product = Product.find(params[:product_id])
-    # TODO: this is kind of confusing:
-    @line_item = @cart.line_items.build(product: product)
+    @line_item = @cart.add_product(product)
 
     respond_to do |format|
       if @line_item.save

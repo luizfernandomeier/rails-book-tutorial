@@ -14,15 +14,15 @@ class CombineItemsInCart < ActiveRecord::Migration[6.1]
   end
 
   def down
-    Cart.all.each do |cart|
-      cart.line_items.each do |line_item|
-        next unless line_item.quantity > 1
-
-        line_item.delete
-        line_item.quantity.times do
-          cart.line_items.build(product_id: line_item.product_id).save!
-        end
+    LineItem.where('quantity>1').each do |line_item|
+      line_item.quantity.times do
+        LineItem.create(
+          cart_id: line_item.cart_id,
+          product_id: line_item.product_id,
+          quantity: 1
+        )
       end
+      line_item.destroy
     end
   end
 end

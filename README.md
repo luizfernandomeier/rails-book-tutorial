@@ -59,4 +59,7 @@ Debug:
 ```sh
 # keep up with the log showing on a terminal
 tail -f log/development.log
+
+# clear test logs
+bin/rails log:clear LOGS=test
 ```

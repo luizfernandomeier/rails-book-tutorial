@@ -30,6 +30,8 @@ bin/rails g migration combine_items_in_cart
 
 bin/rails g migration add_price_to_line_items price:decimal
 
+bin/rails g migration copy_price_to_line_items
+
 # toggle caching on and off in the dev env
 bin/rails dev:cache
 

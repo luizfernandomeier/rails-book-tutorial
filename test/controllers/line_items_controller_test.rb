@@ -46,11 +46,15 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy line_item' do
+    post line_items_url, params: { product_id: products(:ruby).id }
+    cart = Cart.find(a = session[:cart_id])
+    line_item = cart.line_items.first
+
     assert_difference('LineItem.count', -1) do
-      delete line_item_url(@line_item)
+      delete line_item_url(line_item)
     end
 
-    assert_redirected_to line_items_url
+    assert_redirected_to cart
   end
 
   test 'should create 1 line item with quantity of 2' do

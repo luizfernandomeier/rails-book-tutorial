@@ -14,6 +14,8 @@ psql -h localhost -U postgres -d postgres
 
 Rails:
 
+`When running a rails command, restart the server. I've got some strange errors when I didn't restart`
+
 ```sh
 bin/rails g scaffold Product title:string description:text image_url:string price:decimal
 

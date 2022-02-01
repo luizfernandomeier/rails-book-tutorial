@@ -23,7 +23,7 @@
           </div>
           <!-- button_to uses POST as default -->
           <!-- rails also know how to extract the product id -->
-          <%= button_to('Add to Cart', line_items_path(product_id: product)) %>
+          <%= button_to('Add to Cart', line_items_path(product_id: product), remote: true) %>
         </li>
       <% end %>
     <% } %>

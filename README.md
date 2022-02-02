@@ -38,6 +38,8 @@ bin/rails g channel products
 
 bin/rails g scaffold Order name address:text email pay_type:integer
 
+bin/rails g migration add_order_to_line_item order:references
+
 # toggle caching on and off in the dev env
 bin/rails dev:cache
 

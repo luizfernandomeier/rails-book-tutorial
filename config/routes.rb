@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   root 'store#index', as: 'store_index' # this last part creates accessor methods so the tests continue to work
   resources :products
   resources :carts

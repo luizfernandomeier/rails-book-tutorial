@@ -36,6 +36,8 @@ bin/rails g migration copy_price_to_line_items
 
 bin/rails g channel products
 
+bin/rails g scaffold Order name address:text email pay_type:integer
+
 # toggle caching on and off in the dev env
 bin/rails dev:cache
 

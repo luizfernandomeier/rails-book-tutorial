@@ -34,6 +34,8 @@ bin/rails g migration add_price_to_line_items price:decimal
 
 bin/rails g migration copy_price_to_line_items
 
+bin/rails g channel products
+
 # toggle caching on and off in the dev env
 bin/rails dev:cache
 

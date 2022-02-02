@@ -1,5 +1,8 @@
 module StoreHelper
+  include IndexCounter
+
   def must_show_index_counter?
+    initialize_index_counter
     session[:index_counter] > 5
   end
 

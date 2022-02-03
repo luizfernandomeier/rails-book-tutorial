@@ -48,6 +48,8 @@ bin/rails g scaffold User name:string password:digest
 
 bin/rails g controller Sessions new create destroy
 
+bin/rails g controller Admin index
+
 # webpacker
 bin/rails webpacker:install:react
 

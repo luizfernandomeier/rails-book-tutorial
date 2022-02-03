@@ -7,3 +7,7 @@ one:
 two:
   product: red_book
   cart: two
+
+ruby_order_line_item:
+  product: ruby
+  order: one

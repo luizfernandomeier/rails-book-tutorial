@@ -44,6 +44,8 @@ bin/rails g mailer Order received shipped
 
 bin/rails g job charge_order
 
+bin/rails g scaffold User name:string password:digest
+
 # webpacker
 bin/rails webpacker:install:react
 

@@ -5,7 +5,10 @@
 
   <h2>Your Pragmatic Cart</h2>
   <table>
-    <%= render(cart.line_items) %>
+    <% cart.line_items.each do |line_item| %>
+      <%= render(line_item) %>
+      <tr><td><%= button_to 'Remove', line_item, method: :delete %></td></tr>
+    <% end %>
     <tfoot>
       <tr>
         <th colspan="2">Total:</th>

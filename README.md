@@ -67,6 +67,10 @@ Test:
 bin/rails test
 
 bin/rails test:models
+
+bin/rails test:controllers
+
+bin/rails test:system
 ```
 
 Debug:

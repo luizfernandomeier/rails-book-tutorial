@@ -46,6 +46,8 @@ bin/rails g job charge_order
 
 bin/rails g scaffold User name:string password:digest
 
+bin/rails g controller Sessions new create destroy
+
 # webpacker
 bin/rails webpacker:install:react
 

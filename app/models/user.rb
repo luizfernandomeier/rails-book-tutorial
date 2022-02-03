@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  has_secure_password
+  validates :name, presence: true, uniqueness: true
+  has_secure_password # check if the password confirmation matches the password
 end

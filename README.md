@@ -40,6 +40,8 @@ bin/rails g scaffold Order name address:text email pay_type:integer
 
 bin/rails g migration add_order_to_line_item order:references
 
+bin/rails g mailer Order received shipped
+
 # webpacker
 bin/rails webpacker:install:react
 

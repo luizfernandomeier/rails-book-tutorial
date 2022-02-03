@@ -42,6 +42,8 @@ bin/rails g migration add_order_to_line_item order:references
 
 bin/rails g mailer Order received shipped
 
+bin/rails g job charge_order
+
 # webpacker
 bin/rails webpacker:install:react
 

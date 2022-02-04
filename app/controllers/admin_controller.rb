@@ -1,3 +1,5 @@
 class AdminController < ApplicationController
-  def index; end
+  def index
+    @total_orders = Order.count
+  end
 end
